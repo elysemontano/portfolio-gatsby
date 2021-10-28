@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "http://www.elysemontano.com",
+    siteUrl: "https://www.elysemontano.com",
     title: "Elyse Montano Portfolio",
     description: "Full stack software developer portfolio page",
   },
@@ -9,6 +9,8 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-offline",
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -37,6 +39,6 @@ module.exports = {
         display: 'standalone',
         icon: 'src/images/elyse.jpg',
       },
-    }
+    },
   ],
 };
