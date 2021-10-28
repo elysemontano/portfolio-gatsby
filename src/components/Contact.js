@@ -73,17 +73,18 @@ const Contact = () => {
             <Container className={styles.container} maxWidth="md">
                 <Card className={styles.card}>
                     <CardContent>
-                        <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact-form">
-                            <input type="hidden" name="bot-field" />
+                        <form method="post" data-netlify="true" name="contact" onSubmit="submit">
                             <input type="hidden" name="form-name" value="contact" />
+                            
                             <Grid container className={styles.content} spacing={2}>
                                 <Grid item xs={10}>
                                     <Typography component="h1" variant="h2" style={{textAlign:'center', paddingBottom: "15px"}}>Contact Me</Typography>
                                 </Grid>
                                 <Grid item xs={5}>
                                     <CssTextField 
-                                        name="first name"
-                                        label="firstname" 
+                                        type="text"
+                                        name="first-name"
+                                        label="First Name" 
                                         placeholder="Enter First Name" 
                                         variant="outlined" 
                                         className={styles.input} 
@@ -92,8 +93,9 @@ const Contact = () => {
                                 </Grid>
                                 <Grid item xs={5}>
                                     <CssTextField 
-                                        name="last name"
-                                        label="lastname" 
+                                        type="text"
+                                        name="last-name"
+                                        label="Last Name" 
                                         placeholder="Enter Last Name" 
                                         variant="outlined" 
                                         className={styles.input} 
@@ -114,7 +116,8 @@ const Contact = () => {
                                 <Grid item xs={10}> 
                                     <CssTextField 
                                         name="message"
-                                        label="message" 
+                                        type="text"
+                                        label="Message" 
                                         multiline rows={4} 
                                         placeholder="Enter Message" 
                                         variant="outlined" 
