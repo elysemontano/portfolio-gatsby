@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HeroSection() {
     const styles = useStyles()
-    const [checked, setChecked] = useState(true);
+    const [checked] = useState(true);
 
     return (
         <Paper className={styles.heroSection}>

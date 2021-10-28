@@ -10,7 +10,6 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Link from '@material-ui/core/Link'
 import IconButton from '@material-ui/core/IconButton'
-import Fab from '@material-ui/core/Fab'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkIcon from '@material-ui/icons/Link';
 import Grow from '@material-ui/core/Grow'
@@ -96,7 +95,7 @@ const useStyles = makeStyles(() => ({
 function ProjectCard({data}) {
     const styles = useStyles()
     const [activeImage, setActiveImage]=useState(-1)
-    const [checked, setChecked] = useState(true);
+    const [checked] = useState(true);
 
     const showDescription = (index)=>{
         setActiveImage(index);
