@@ -10,7 +10,7 @@ const navigationLinks = [
     {name: "About", href: "#about" },
     {name: "Skills", href: "#skills" },
     {name: "Projects", href: "#projects" },
-    {name: "Resume", href: "" },
+    {name: "Resume", href: "/ElyseMontano-Portfolio-Resume.pdf" },
 ];
 
 const useStyles = makeStyles((theme) => ({
