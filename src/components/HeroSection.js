@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState} from 'react'
-import {createTheme,responsiveFontSizes,ThemeProvider,} from "@material-ui/core/styles"
 import { StaticImage } from 'gatsby-plugin-image'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
@@ -39,7 +38,6 @@ export default function HeroSection() {
     const [checked] = useState(true);
 
     return (
-        // <ThemeProvider theme={theme}>
             <Paper className={styles.heroSection}>
                 <Container className={styles.container} maxWidth="md">
                     <Grid className={styles.content} container alignItems="center">
@@ -63,11 +61,11 @@ export default function HeroSection() {
                                 </div>
                             </Fade>
                             <Fade in={checked} timeout={2000}>
-                                <div style={{borderRadius: "100%"}}>                               
+                                <div>                               
                                     <Slide direction="up" in={checked} timeout={700}>                                                           
-                                        <Box my={5} style={{borderRadius: "100%"}}>
+                                        <Box my={5}>
                                         <StaticImage 
-                                                src="../images/elyse.jpg" 
+                                                src="../images/elyse-profile-pic.png" 
                                                 alt="Elyse Montano"
                                                 className={styles.profilePic} />
                                         </Box>
@@ -78,6 +76,5 @@ export default function HeroSection() {
                     </Grid>
                 </Container>
             </Paper>
-        // </ThemeProvider>
     )
 }
