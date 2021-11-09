@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkIcon from '@material-ui/icons/Link';
 import Grow from '@material-ui/core/Grow'
+import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles(() => ({
     projectsSection: {
@@ -55,10 +56,10 @@ const useStyles = makeStyles(() => ({
     },
     button: {
         height: 60,
-        width: 150,
+        width: 200,
         background: "#54707f",
         color: "#e9f0f3",
-        borderRadius: "15px",
+        borderRadius: "25px",
         border: "2px solid #54707f",
         marginTop: "2vh"
     },
@@ -180,10 +181,10 @@ export default function Projects() {
                         {show && 
                             <Grid item xs={12}>
                                 <ProjectCard data={moreProjects}/>
-                                <button className={styles.button} onClick={handleChange}>Hide Extra Projects</button>
+                                <Button className={styles.button} onClick={handleChange}>Hide Extra Projects</Button>
                             </Grid>}
                         {!show &&
-                            <button className={styles.button} onClick={handleChange}>Show All Projects</button>
+                            <Button className={styles.button} onClick={handleChange}>Show All Projects</Button>
                         }           
                 </Grid>
             </Container>

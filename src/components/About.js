@@ -34,7 +34,7 @@ export default function About() {
         <Paper className={styles.aboutSection} id="about">
         <Container className={styles.container} maxWidth="md">
             <Grid container className={styles.content} alignItems="center">
-                <Grid item> 
+                <Grid item xs={10} md={12}> 
                 <Typography component="h1" variant="h2" style={{textAlign:'center'}} gutterBottom>About</Typography>
                 <Typography gutterBottom>
                     I am a software developer with a passion for writing software and web applications, with readable code for efficient collaboration and a user friendly experience.  With a six year background in live sound engineering, I am no stranger to troubleshooting, thinking outside the box, and working creatively and collaboratively to solve problems and produce a high quality standard.  I am always looking to expand myself, further build my skills and bring the latest and most up to date approaches to any project.

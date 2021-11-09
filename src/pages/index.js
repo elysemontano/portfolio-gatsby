@@ -1,5 +1,5 @@
 import React from 'react'
-import {createTheme, ThemeProvider } from "@material-ui/core/styles"
+import {createTheme, ThemeProvider,responsiveFontSizes } from "@material-ui/core/styles"
 import CssBaseline from '@material-ui/core/CssBaseline'
 import HeroSection from "../components/HeroSection"
 import Header from "../components/Header"
@@ -15,9 +15,12 @@ const darkTheme = createTheme({
   },
 });
 
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
+
 const IndexPage = () => {
   return(
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={darkTheme, theme}>
       <CssBaseline />
       <Header />
       <HeroSection />

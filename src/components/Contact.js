@@ -86,7 +86,7 @@ const Contact = () => {
                                 <Grid item xs={10}>
                                     <Typography component="h1" variant="h2" style={{textAlign:'center', paddingBottom: "15px"}}>Contact Me</Typography>
                                 </Grid>
-                                <Grid item xs={5}>
+                                <Grid item xs={12} md={5}>
                                     <CssTextField 
                                         type="text"
                                         name="first-name"
@@ -98,7 +98,7 @@ const Contact = () => {
                                         fullWidth 
                                         required/>
                                 </Grid>
-                                <Grid item xs={5}>
+                                <Grid item xs={12} md={5}>
                                     <CssTextField 
                                         type="text"
                                         name="last-name"
@@ -110,7 +110,7 @@ const Contact = () => {
                                         fullWidth 
                                         required/>
                                 </Grid>
-                                <Grid item xs={10}>
+                                <Grid item xs={12} md={10}>
                                     <CssTextField 
                                         name="email"
                                         type="email" 
@@ -122,7 +122,7 @@ const Contact = () => {
                                         fullWidth 
                                         required/>
                                 </Grid>
-                                <Grid item xs={10}> 
+                                <Grid item xs={12} md={10}> 
                                     <CssTextField 
                                         name="message"
                                         type="text"
