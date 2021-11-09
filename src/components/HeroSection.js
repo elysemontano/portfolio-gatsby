@@ -63,9 +63,9 @@ export default function HeroSection() {
                                 </div>
                             </Fade>
                             <Fade in={checked} timeout={2000}>
-                                <div>                               
+                                <div style={{borderRadius: "100%"}}>                               
                                     <Slide direction="up" in={checked} timeout={700}>                                                           
-                                        <Box my={5}>
+                                        <Box my={5} style={{borderRadius: "100%"}}>
                                         <StaticImage 
                                                 src="../images/elyse.jpg" 
                                                 alt="Elyse Montano"

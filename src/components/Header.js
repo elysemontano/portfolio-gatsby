@@ -34,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
     social: {
         marginRight: "auto"
     },
+    paper: {
+        background: "#6c6c6c",
+        color: "white"
+    }
 }))
 
 function Navigation({style}) {
@@ -60,7 +64,6 @@ export default function Header() {
     const styles = useStyles()
     const [navBackground, setNavBackground] = useState("appBarSolid")
     const [open, setOpen] = useState(false)
-
     const navRef = React.useRef()
     navRef.current = navBackground
 
@@ -100,10 +103,10 @@ export default function Header() {
                 </div>
                     </Hidden>
             </Toolbar>
-            <SwipableDrawer anchor="right" open={open} onOpen={()=> setOpen(true)} onClose={()=> setOpen(false)}>
+            <SwipableDrawer classes={{ paper: styles.paper}} anchor="right" open={open} onOpen={()=> setOpen(true)} onClose={()=> setOpen(false)}>
                 <div onClick={()=> setOpen(false)}>
                     <IconButton>
-                        <ChevronIcon />
+                        <ChevronIcon style={{color: "white" }}/>
                     </IconButton>
                 </div>
                 <Divider/>
