@@ -6,6 +6,13 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Social from "./Social"
 import Typography from '@material-ui/core/Typography'
+import Hidden from '@material-ui/core/Hidden'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import SwipableDrawer from '@material-ui/core/SwipeableDrawer'
+import Divider from '@material-ui/core/Divider'
+import ChevronIcon from '@material-ui/icons/ChevronRight'
+
 
 const navigationLinks = [
     {name: "About", href: "#about" },
@@ -29,12 +36,34 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
+function Navigation({style}) {
+    const styles = useStyles()
+    return (
+        <div>
+            {navigationLinks.map((item, id) => (
+                <Link
+                    className={styles.link}
+                    style={style}
+                    variant="button"
+                    underline="none"
+                    key={id}
+                    href={item.href}
+                    >
+                    {item.name}
+                </Link>
+            ))}
+        </div>
+    )
+}
+
 export default function Header() {
     const styles = useStyles()
     const [navBackground, setNavBackground] = useState("appBarSolid")
+    const [open, setOpen] = useState(false)
 
     const navRef = React.useRef()
     navRef.current = navBackground
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -52,23 +81,34 @@ export default function Header() {
     }, [])
 
     return (
-        <AppBar className={styles[navRef.current]} position="sticky">
-            <Toolbar>
-            <Typography style={{ color: "#658491" }}>Elyse Montano</Typography>
-            <Social style={{color: "#757575"}}/>
-                {navigationLinks.map((item, id) => (
-                    <Link
-                        className={styles.link}
-                        style={{ color: "#424242" }}
-                        variant="button"
-                        underline="none"
-                        key={id}
-                        href={item.href}
-                        >
-                        {item.name}
-                    </Link>
-                ))}
+        <AppBar className={styles[navRef.current]} position="sticky" >               
+            <Toolbar style={{display:"flex", justifyContent: "space-between"}}>
+                <div style={{width: "270px", display: "flex"}}>
+                    <Typography style={{ color: "#658491", fontSize: "1.2rem" }}>Elyse Montano</Typography>
+                </div>
+                <Hidden smDown>
+                    <Social style={{color: "#757575"}}/>
+                </Hidden>
+                <Hidden smDown>
+                    <Navigation style={{color: "#424242"}}/>
+                </Hidden>
+                <Hidden mdUp>
+                <div onClick={() => setOpen(true)}>                    
+                    <IconButton style={{color: "#757575"}}>
+                        <MenuIcon />
+                    </IconButton>
+                </div>
+                    </Hidden>
             </Toolbar>
+            <SwipableDrawer anchor="right" open={open} onOpen={()=> setOpen(true)} onClose={()=> setOpen(false)}>
+                <div onClick={()=> setOpen(false)}>
+                    <IconButton>
+                        <ChevronIcon />
+                    </IconButton>
+                </div>
+                <Divider/>
+                <Navigation style={{color: "#e9f0f3", display:"flex", flexDirection: "column", padding: "10px", paddingLeft: "20px"}}/>
+            </SwipableDrawer>
         </AppBar>
     )
 }

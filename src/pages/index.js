@@ -11,7 +11,7 @@ import Footer from "../components/Footer"
 
 const darkTheme = createTheme({
   palette: {
-    type: "light",
+    type: "dark",
   },
 });
 

@@ -107,8 +107,11 @@ function ProjectCard({data}) {
 
     return (   
     <div className={styles.flex}>
+        <Grid container style={{justifyContent: "space-evenly"}}>
+        
         {data.map((item, index) => {
             return (
+                <Grid item xs={9} md={3} style={{display: "flex", justifyContent: "center"}} key={index}>
             <Grow in={checked} style={{ transformOrigin: '0 0 0' }}
             {...(checked ? { timeout: 1000 } : {})}> 
                 <div 
@@ -118,35 +121,39 @@ function ProjectCard({data}) {
                     onBlur={()=>hideDescription(-1)}
                     size="small" color="secondary" aria-label="add" 
                     className={styles.projectBlock}>
-                    <Card className={styles.card} key={index}>
-                        <CardContent className={styles.cardContent}>
-                            <Typography variant="h5" style={{paddingBottom: "20px"}}>{item.name}</Typography>
-                                {activeImage === index ? 
-                                    <div className={styles.description}>
-                                        <CardMedia image={item.imageURL} className={styles.media}/>
-                                        <div className={styles.hover}>
-                                            <Typography variant="body1">{item.description}</Typography>
-                                            <div className={styles.icon}>
-                                            {item.links.map((link, index) => {
-                                                return (                             
-                                                        <Link href={link.url} target="_blank" key={index}>
-                                                            <IconButton style={{ color: "#e9f0f3" }}>
-                                                                <link.icon />
-                                                            </IconButton>
-                                                        </Link>           
-                                                )
-                                            })}
+                    
+                        <Card className={styles.card} >
+                            <CardContent className={styles.cardContent}>
+                                <Typography variant="h5" style={{paddingBottom: "20px"}}>{item.name}</Typography>
+                                    {activeImage === index ? 
+                                        <div className={styles.description}>
+                                            <CardMedia image={item.imageURL} className={styles.media}/>
+                                            <div className={styles.hover}>
+                                                <Typography variant="body1">{item.description}</Typography>
+                                                <div className={styles.icon}>
+                                                {item.links.map((link, index) => {
+                                                    return (                             
+                                                            <Link href={link.url} target="_blank" key={index}>
+                                                                <IconButton style={{ color: "#e9f0f3" }}>
+                                                                    <link.icon />
+                                                                </IconButton>
+                                                            </Link>           
+                                                    )
+                                                })}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> 
-                                : <CardMedia image={item.imageURL} className={styles.media}/>
-                                }
-                        </CardContent>
-                    </Card>
+                                        </div> 
+                                    : <CardMedia image={item.imageURL} className={styles.media}/>
+                                    }
+                            </CardContent>
+                        </Card>
+                    
                 </div>
             </Grow>
+        </Grid>
             )
         })}
+        </Grid>
     </div>  
     )
 }

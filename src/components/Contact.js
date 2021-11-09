@@ -33,13 +33,17 @@ const useStyles = makeStyles(() => ({
         padding: 30
     },
     input: {
-        background: "#e9f0f3",
+        background: "white",
+        color: "black"
     },
     button: {
         background: "#8896a2",
         border: "2px solid #658491",
         color: "#e9f0f3",
         marginTop: 10,
+        '&:hover': {
+            color: 'black',
+        },
     }
 }))
 
@@ -67,12 +71,15 @@ const CssTextField = withStyles({
 
 const Contact = () => {
     const styles = useStyles()
+    const classes = useStyles();
     return (
         <Paper className={styles.contactSection} id="contact">
             <Container className={styles.container} maxWidth="md">
                 <Card className={styles.card}>
                     <CardContent>
-                        <form method="post" data-netlify="true" name="contact" onSubmit="submit">
+                        <form method="post" data-netlify="true" name="contact" 
+                        // onSubmit="submit"
+                        >
                             <input type="hidden" name="form-name" value="contact" />
                             
                             <Grid container className={styles.content} spacing={2}>
@@ -86,7 +93,8 @@ const Contact = () => {
                                         label="First Name" 
                                         placeholder="Enter First Name" 
                                         variant="outlined" 
-                                        className={styles.input} 
+                                        inputProps={{ className: classes.input }}
+                                        InputLabelProps={{style: { color: 'black' }}}
                                         fullWidth 
                                         required/>
                                 </Grid>
@@ -97,7 +105,8 @@ const Contact = () => {
                                         label="Last Name" 
                                         placeholder="Enter Last Name" 
                                         variant="outlined" 
-                                        className={styles.input} 
+                                        inputProps={{ className: classes.input }}
+                                        InputLabelProps={{style: { color: 'black' }}}
                                         fullWidth 
                                         required/>
                                 </Grid>
@@ -108,7 +117,8 @@ const Contact = () => {
                                         label="Email" 
                                         placeholder="Enter Email" 
                                         variant="outlined" 
-                                        className={styles.input} 
+                                        inputProps={{ className: classes.input }}
+                                        InputLabelProps={{style: { color: 'black' }}}
                                         fullWidth 
                                         required/>
                                 </Grid>
@@ -120,7 +130,8 @@ const Contact = () => {
                                         multiline rows={4} 
                                         placeholder="Enter Message" 
                                         variant="outlined" 
-                                        className={styles.input} 
+                                        inputProps={{ className: classes.input }}
+                                        InputLabelProps={{style: { color: 'black' }}}
                                         fullWidth 
                                         required/>
                                 </Grid>

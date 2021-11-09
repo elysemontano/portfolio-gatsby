@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
         height: "100%",
         background: "#668b9f",
         backgroundSize: "cover",
-        backgroundPosition: "center"
+        backgroundPosition: "center",
+        paddingBottom: "50px"
     },
     content: {
         height: "100%",
@@ -56,18 +57,22 @@ const useStyles = makeStyles((theme) => ({
 function SkillCard({data}) {
     const styles = useStyles()
     return (
-    <div className={styles.flex}>
+        <div className={styles.flex}> 
+        <Grid container style={{justifyContent: "space-evenly"}}>
         {data.map((item, index) => {
             return (
-            <Card className={styles.skillBlock} key={index}>
-                <CardContent>
-                    <CardMedia image={item.imageURL} className={styles.media}></CardMedia>
-                    <Typography>{item.name}</Typography>
-                </CardContent>
-            </Card>
+                    <Grid item xs={4} md={2} style={{display: "flex", justifyContent: "center"}} key={index}>
+                        <Card className={styles.skillBlock}>
+                            <CardContent>
+                                <CardMedia image={item.imageURL} className={styles.media}></CardMedia>
+                                <Typography>{item.name}</Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>        
             )
         })}
-    </div>
+        </Grid>
+      </div> 
     )
 }
 
@@ -81,19 +86,19 @@ const Skills = () => {
                             <Typography component="h1" variant="h2" style={{textAlign:'center'}}>Skills</Typography>
                         </Grid>
                         
-                        <Grid item xs={12}>
+                        <Grid item xs={10} md={12}>
                             <Paper className={styles.skillContainer}>
                                 <Typography variant="h5">Languages</Typography>
                                 <SkillCard data={languages}/>
                             </Paper>
                         </Grid>
-                        <Grid item xs={6} style={{marginBottom: 50}}>
+                        <Grid item xs={10} md={6}>
                             <Paper className={styles.skillContainer}>
                                 <Typography variant="h5">Frameworks</Typography>
                                 <SkillCard data={frameworks}/>
                             </Paper>
                         </Grid>
-                        <Grid item xs={6} style={{marginBottom: 50}}>
+                        <Grid item xs={10} md={6}>
                             <Paper className={styles.skillContainer}>
                                 <Typography variant="h5">Other</Typography>
                                 <SkillCard data={other}/>
