@@ -55,6 +55,12 @@ const CssTextField = withStyles({
       '& .MuiInput-underline:after': {
         borderBottomColor: "#54707f", //changed border color
       },
+      '& .MuiInputBase-multiline': {
+        padding: 0
+      },
+      '& textarea.MuiInputBase-input.MuiOutlinedInput-input.makeStyles-input-37.MuiInputBase-inputMultiline.MuiOutlinedInput-inputMultiline': {
+        padding: "15px"
+      },
       '& .MuiOutlinedInput-root': {
         '& fieldset': {
           borderColor: "#658491",
@@ -75,7 +81,7 @@ const Contact = () => {
     return (
         <Paper className={styles.contactSection} id="contact">
             <Container className={styles.container} maxWidth="md">
-                <Card className={styles.card}>
+                <Card className={styles.card} elevation={0}>
                     <CardContent>
                         <form method="post" data-netlify="true" name="contact" 
                         // onSubmit="submit"
