@@ -204,20 +204,21 @@ const featuredProjects = [
         ]
     },
     {
+        name: "Apartment App",
+        description: "Apartment finder built with React in Rails",
+        imageURL: "apartmentapp.png",
+        links: [
+            {icon: GitHubIcon, url: "https://github.com/elysemontano/apartment-app-functional"},
+            // {icon: LinkIcon, url: "https://safe-brook-46727.herokuapp.com/"},
+        ]
+    },
+    {
         name: "Reunion App",
         description: "Event organizer built in React in Rails",
         imageURL: "reunion.png",
         links: [
             {icon: GitHubIcon, url: "https://github.com/reunion-cap/reunion-app"},
-            {icon: LinkIcon, url: "https://safe-brook-46727.herokuapp.com/"}
-        ]
-    },
-    {
-        name: "Chasing Out Foxes Website",
-        description: "Website for local Christian Band using bootstrap studio",
-        imageURL: "chasingoutfoxes.png",
-        links: [
-            {icon: LinkIcon, url: "https://chasingoutfoxes.com/",}
+            // {icon: LinkIcon, url: "https://safe-brook-46727.herokuapp.com/"}
         ]
     },
     {
@@ -231,19 +232,19 @@ const featuredProjects = [
 ]
 const moreProjects = [
     {
+        name: "Chasing Out Foxes Website",
+        description: "Website for local Christian Band using bootstrap studio",
+        imageURL: "chasingoutfoxes.png",
+        links: [
+            {icon: LinkIcon, url: "https://chasingoutfoxes.com/",}
+        ]
+    },
+    {
         name: "Measurement Converter",
         description: "Measurement Converter built with PHP, HTML and CSS",
         imageURL: "measurementconverter.png",
         links: [
             {icon: GitHubIcon, url: "https://github.com/elysemontano/converter_app"},
-        ]
-    },
-    {
-        name: "Apartment App",
-        description: "Apartment finder built with React in Rails",
-        imageURL: "apartmentapp.png",
-        links: [
-            {icon: GitHubIcon, url: "https://github.com/elysemontano/apartment-app-elysemontano",}
         ]
     },
     {

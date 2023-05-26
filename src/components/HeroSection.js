@@ -55,8 +55,11 @@ export default function HeroSection() {
                             </Fade>
                             <Fade in={checked} timeout={2000}>
                                 <div>
-                                    <Slide direction="right" in={checked} timeout={800}>                                
-                                        <Typography variant="h5">Full Stack Developer and Instructor</Typography>
+                                    <Slide direction="right" in={checked} timeout={800}> 
+                                        <div>                                            
+                                            <Typography variant="h5">Full Stack Developer</Typography>
+                                            <Typography variant="h5">Lead Instructor</Typography>
+                                        </div>                               
                                     </Slide>
                                 </div>
                             </Fade>

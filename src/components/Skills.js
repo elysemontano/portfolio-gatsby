@@ -120,7 +120,7 @@ const languages = [
     {name: "Javascript", imageURL: "JS Icon.png" },
     {name: "HTML", imageURL: "HTML Icon.png" },
     {name: "Ruby", imageURL: "Ruby Icon.png" },
-    {name: "PHP", imageURL: "php logo.png" },
+    // {name: "PHP", imageURL: "php logo.png" },
     {name: "SQL", imageURL: "sql Icon.png" },
 ];
 

@@ -24,6 +24,7 @@ const navigationLinks = [
 const useStyles = makeStyles((theme) => ({
     link: {
         marginRight: 20,
+        color: "#e9f0f3",
     },
     appBarTransparent: {
         backgroundColor: "rgba(255,255,255,0.6)",
@@ -87,7 +88,7 @@ export default function Header() {
         <AppBar className={styles[navRef.current]} position="sticky" >               
             <Toolbar style={{display:"flex", justifyContent: "space-between"}}>
                 <div style={{width: "270px", display: "flex"}}>
-                    <Typography style={{ color: "#658491", fontSize: "1.2rem" }}>Elyse Montano</Typography>
+                    <Typography style={{ color: "#658491", fontSize: "1.2rem" }}><Link style={{color: "inherit"}}href="/ElyseMontano-Portfolio-Resume.pdf">Elyse Montano</Link></Typography>
                 </div>
                 <Hidden smDown>
                     <Social style={{color: "#757575"}}/>
