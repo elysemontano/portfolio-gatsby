@@ -128,7 +128,7 @@ function ProjectCard({data}) {
                                 <Typography variant="h5" style={{paddingBottom: "20px"}}>{item.name}</Typography>
                                     {activeImage === index ? 
                                         <div className={styles.description}>
-                                            <Image fileName={item.imageURL} className={styles.media} style={{ width: "90%", height: "100%"}}/>
+                                            <Image fileName={item.imageURL} className={styles.media} style={{ width: "90%", maxHeight: "100%"}}/>
                                             <div className={styles.hover}>
                                                 <Typography variant="body1">{item.description}</Typography>
                                                 <div className={styles.icon}>
@@ -195,6 +195,15 @@ export default function Projects() {
 
 const featuredProjects = [
     {
+        name: "Pairing Randomizer",
+        description: "React and Rails project that optimizes student pairings on projects",
+        imageURL: "under_construction.jpg",
+        links: [
+            {icon: GitHubIcon, url: "https://github.com/LEARNAcademy/pairing-app-frontend"},
+            {icon: GitHubIcon, url: "https://github.com/LEARNAcademy/pairing-app-backend"}
+        ]
+    },
+    {
         name: "Team Organizer",
         description: "Built with React in Rails to organize team using multiple search functions",
         imageURL: "worshipteam.png",
@@ -208,8 +217,9 @@ const featuredProjects = [
         description: "Apartment finder built with React in Rails",
         imageURL: "apartmentapp.png",
         links: [
-            {icon: GitHubIcon, url: "https://github.com/elysemontano/apartment-app-functional"},
-            // {icon: LinkIcon, url: "https://safe-brook-46727.herokuapp.com/"},
+            {icon: GitHubIcon, url: "https://github.com/elysemontano/apartment-app-frontend"},
+            {icon: GitHubIcon, url: "https://github.com/elysemontano/apartment-app-backend"},
+            {icon: LinkIcon, url: "https://apartment-app-frontend.onrender.com/"}
         ]
     },
     {
@@ -220,7 +230,9 @@ const featuredProjects = [
             {icon: GitHubIcon, url: "https://github.com/reunion-cap/reunion-app"},
             // {icon: LinkIcon, url: "https://safe-brook-46727.herokuapp.com/"}
         ]
-    },
+    }
+]
+const moreProjects = [
     {
         name: "Mortgage Calculator",
         description: "Mobile app to calculate monthly mortgage payments",
@@ -228,9 +240,7 @@ const featuredProjects = [
         links: [
             {icon: GitHubIcon, url: "https://github.com/elysemontano/mortgage_calculator"},
         ]
-    }
-]
-const moreProjects = [
+    },
     {
         name: "Chasing Out Foxes Website",
         description: "Website for local Christian Band using bootstrap studio",
