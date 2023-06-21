@@ -197,7 +197,7 @@ const featuredProjects = [
     {
         name: "Pairing Randomizer",
         description: "React and Rails project that optimizes student pairings on projects",
-        imageURL: "under_construction.jpg",
+        imageURL: "under_construction.webp",
         links: [
             {icon: GitHubIcon, url: "https://github.com/LEARNAcademy/pairing-app-frontend"},
             {icon: GitHubIcon, url: "https://github.com/LEARNAcademy/pairing-app-backend"}
